@@ -1,0 +1,57 @@
+.list__container {
+  height: 300px;
+  overflow-y: scroll;
+}
+.list__container::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+.list {
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  color: #91959b;
+}
+.list:first-child {
+  padding-top: 1.5rem;
+}
+.list p {
+  font-size: 0.9rem;
+}
+/* custom radio button */
+.list__checkbox {
+  display: block;
+  position: relative;
+  padding-left: 19px;
+  margin-bottom: 17px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 22px;
+}
+/* hiding the original input element */
+.list__checkbox input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  cursor: pointer;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 1px solid #4fe3a4;
+}
+.list__checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.list__checkbox input[type="checkbox"]:checked ~ .checkmark {
+  background-color: #4fe3a4;
+}
+.list__checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
