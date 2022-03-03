@@ -4,60 +4,36 @@ function Lists() {
   return (
     <div className="list__container">
       <div className="list">
-        <p>begin Promotion</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" defaultChecked />
-          <span className="checkmark" />
-        </label>
+        <p>Begin Promotion</p>
+        <input type="checkbox" />
       </div>
       <div className="list">
         <p>Read an article</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark" />
-        </label>
+        <input type="checkbox" />
       </div>
       <div className="list">
-        <p>try not to fall asleep</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-        </label>
+        <p>Try not to fall asleep</p>
+        <input type="checkbox" />
       </div>
       <div className="list">
-        <p>watch 'sherlok'</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-        </label>
+        <p>Watch 'sherlok'</p>
+        <input type="checkbox" />
       </div>
       <div className="list">
-        <p>begin QA for the product</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-        </label>
+        <p>Begin QA for the product</p>
+        <input type="checkbox" />
       </div>
       <div className="list">
-        <p>go for a walk</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-        </label>
+        <p>Go for a walk</p>
+        <input type="checkbox" />
       </div>
       <div className="list">
-        <p>go for a walk</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-        </label>
+        <p>Go for a walk</p>
+        <input type="checkbox" />
       </div>
       <div className="list">
-        <p>go for a walk</p>
-        <label htmlFor="" className="list__checkbox">
-          <input type="checkbox" />
-          <span className="checkmark"></span>
-        </label>
+        <p>Go for a walk</p>
+        <input type="checkbox" />
       </div>
     </div>
   );
