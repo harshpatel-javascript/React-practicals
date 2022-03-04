@@ -1,8 +1,8 @@
 .button-container {
   padding-top: 1rem;
-  position: fixed;
+  position: relative;
 }
-.button-container-btn {
+.btn {
   height: 60px;
   width: 60px;
   position: absolute;
@@ -13,7 +13,7 @@
   opacity: 1;
   background-color: #4fe3a4;
 }
-button .button-container-btn {
+.button-container {
   position: fixed;
 }
 .form-container {
@@ -23,6 +23,6 @@ button .button-container-btn {
 .form-container-hidden {
   display: none;
 }
-/* .button-container-btn-hidden {
+.button-container-hidden {
   opacity: 0;
-} */
+}

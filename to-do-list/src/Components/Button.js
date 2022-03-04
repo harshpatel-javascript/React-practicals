@@ -36,7 +36,7 @@ function Button(props) {
           onChange={(e) => setEnteredTodo(e.target.value)}
         />
       </form>
-      <button className="button-container-btn" onClick={clickHandler}>
+      <button className="btn" onClick={clickHandler}>
         <img src={plus} alt="plus" />
       </button>
     </div>
