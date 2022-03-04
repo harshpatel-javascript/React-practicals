@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function ListItem(props) {
   const [checked, setChecked] = useState(false);
 
+  // state handling as per the input:checkbox
   const checkedHandler = (e) => {
     e.target.checked ? setChecked(true) : setChecked(false);
   };

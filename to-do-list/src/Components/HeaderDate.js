@@ -1,5 +1,7 @@
 import React from "react";
+
 import "./headerDate.css";
+
 function HeaderDate() {
   const date = new Date();
   const day = date.toLocaleString("en-US", { day: "2-digit" });
