@@ -1,42 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import InputForm from "./InputForm";
+import ListItem from "./ListItem";
+import defined_todos from "./ListItems.json";
 import "./Lists.css";
 function Lists() {
+  const [todos, setTodos] = useState(defined_todos);
+  const addTodoHandler = (todo) => {
+    setTodos((prevTodo) => {
+      return [...prevTodo, todo];
+    });
+  };
+  // const showHandler = () => {};
   return (
-    <div className="list__container">
-      <div className="list">
-        <p>Begin Promotion</p>
-        <input type="checkbox" />
+    <>
+      <div className="list__container">
+        {todos.map((todo) => (
+          <ListItem key={todo.id} todo={todo} />
+        ))}
       </div>
-      <div className="list">
-        <p>Read an article</p>
-        <input type="checkbox" />
-      </div>
-      <div className="list">
-        <p>Try not to fall asleep</p>
-        <input type="checkbox" />
-      </div>
-      <div className="list">
-        <p>Watch 'sherlok'</p>
-        <input type="checkbox" />
-      </div>
-      <div className="list">
-        <p>Begin QA for the product</p>
-        <input type="checkbox" />
-      </div>
-      <div className="list">
-        <p>Go for a walk</p>
-        <input type="checkbox" />
-      </div>
-      <div className="list">
-        <p>Go for a walk</p>
-        <input type="checkbox" />
-      </div>
-      <div className="list">
-        <p>Go for a walk</p>
-        <input type="checkbox" />
-      </div>
-    </div>
+      <InputForm onAddTodo={addTodoHandler} />
+      {/* showInput={showHandler} */}
+    </>
   );
 }
-
 export default Lists;
