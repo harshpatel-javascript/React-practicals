@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 
-import InputForm from "./InputForm";
+import Button from "./Button";
+// import InputForm from "./InputForm";
 import ListItem from "./ListItem";
-import defined_todos from "./ListItems.json";
+import defaultTodos from "./ListItems.json";
 import "./Lists.css";
 
 function Lists() {
-  const [todos, setTodos] = useState(defined_todos);
+  const [todos, setTodos] = useState(defaultTodos);
   // handling when the input will be submitted via inputForm
   const addTodoHandler = (todo) => {
     setTodos((prevTodo) => {
       return [...prevTodo, todo];
     });
   };
-  // const showHandler = () => {};
+
   return (
     <>
-      <div className="list__container">
+      <div className="list-container">
         {todos.map((todo) => (
           <ListItem key={todo.id} todo={todo} />
         ))}
       </div>
-      <InputForm onAddTodo={addTodoHandler} />
-      {/* showInput={showHandler} */}
+      <Button onAddTodo={addTodoHandler} />
     </>
   );
 }

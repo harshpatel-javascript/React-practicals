@@ -3,27 +3,27 @@
   align-items: center;
   justify-content: space-between;
 }
-.header__date {
+.date {
   display: flex;
   gap: 5px;
   color: #5e6170;
   align-items: center;
 }
-.header__date-day {
+.day {
   display: flex;
   font-size: 2rem;
   font-weight: bold;
 }
-.header__date-month {
+.month {
   font-size: 0.8rem;
   color: #989aa4;
   font-weight: bold;
 }
-.header__date-year {
+.year {
   font-size: 0.8rem;
   color: #919191;
 }
-.header__weekday {
+.weekday {
   font-size: 0.9rem;
   font-weight: bold;
   color: #747272;

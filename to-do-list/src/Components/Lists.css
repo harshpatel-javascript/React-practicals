@@ -1,8 +1,8 @@
-.list__container {
+.list-container {
   height: 300px;
   overflow-y: scroll;
 }
-.list__container::-webkit-scrollbar {
+.list-container::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
 .list {
@@ -12,7 +12,7 @@
   justify-content: space-between;
   padding-top: 0.5rem;
 }
-.not__completed {
+.not-completed {
   color: #555555;
 }
 .completed {

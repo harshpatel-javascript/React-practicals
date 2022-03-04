@@ -1,27 +1,26 @@
 [
   {
     "id": 1,
-    "todo": "Hello there"
+    "name": "Hello there"
   },
   {
     "id": 2,
-    "todo": "begin prmotion"
+    "name": "begin prmotion"
   },
   {
     "id": 3,
-    "todo": "Buy Sweatshirt"
+    "name": "Buy Sweatshirt"
   },
   {
     "id": 4,
-    "todo": "Try not to fall asleep"
+    "name": "Try not to fall asleep"
   },
   {
     "id": 5,
-    "todo": "Watch 'sherlok'"
+    "name": "Watch 'sherlok'"
   },
   {
     "id": 6,
-    "todo": "Begin QA for the product"
+    "name": "Begin QA for the product"
   }
 ]
-  

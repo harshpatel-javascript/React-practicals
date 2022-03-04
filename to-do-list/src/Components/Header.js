@@ -10,14 +10,14 @@ function HeaderDate() {
   const weekday = date.toLocaleString("en-us", { weekday: "long" });
   return (
     <div className="header">
-      <div className="header__date">
-        <div className="header__date-day">{day}</div>
+      <div className="date">
+        <div className="day">{day}</div>
         <div>
-          <div className="header__date-month">{month.toUpperCase()}</div>
-          <div className="header__date-year">{year}</div>
+          <div className="month">{month.toUpperCase()}</div>
+          <div className="year">{year}</div>
         </div>
       </div>
-      <div className="header__weekday">{weekday.toUpperCase()}</div>
+      <div className="weekday">{weekday.toUpperCase()}</div>
     </div>
   );
 }

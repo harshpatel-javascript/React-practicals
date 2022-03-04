@@ -8,8 +8,8 @@ function ListItem(props) {
     e.target.checked ? setChecked(true) : setChecked(false);
   };
   return (
-    <div className={checked ? "list completed" : "list not__completed"}>
-      <p>{props.todo.todo}</p>
+    <div className={checked ? "list completed" : "list not-completed"}>
+      <p>{props.todo.name}</p>
       <input type="checkbox" onChange={checkedHandler} />
     </div>
   );
