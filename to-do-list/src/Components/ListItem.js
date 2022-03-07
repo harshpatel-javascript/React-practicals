@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ListItem(props) {
+function ListItem({ todo }) {
   const [checked, setChecked] = useState(false);
 
   // state handling as per the input:checkbox
@@ -9,7 +9,7 @@ function ListItem(props) {
   };
   return (
     <div className={checked ? "list completed" : "list not-completed"}>
-      <p>{props.todo.title}</p>
+      <p>{todo.title}</p>
       <input
         className="list-checkbox"
         type="checkbox"

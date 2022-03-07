@@ -1,6 +1,5 @@
 import React from "react";
 
-// import InputForm from "./InputForm";
 import ListItem from "./ListItem";
 import "./TodoList.css";
 
