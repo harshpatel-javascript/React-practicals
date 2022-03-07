@@ -4,9 +4,10 @@ import "./App.css";
 import Header from "./Components/Header";
 import TodoList from "./Components/TodoList";
 import AddNewTask from "./Components/AddNewTask.js";
+import defaultTodos from "./Components/ListItems.json";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(defaultTodos);
   // handling when the input will be submitted via inputForm
   const addTodoHandler = (todo) => {
     setTodos((prevTodo) => {
