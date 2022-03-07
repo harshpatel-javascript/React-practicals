@@ -10,8 +10,9 @@ function AddNewTask({ onAddTodo }) {
   }
   const [enteredTodo, setEnteredTodo] = useState([]);
   // on form submission handler
-  function submitHandler(e) {
-    e.preventDefault();
+  function submitHandler(event) {
+    const {preventDefault} = event;
+    preventDefault();
     // error handling for not giving input
     if (enteredTodo === "") {
       alert("Please enter the todo.");
