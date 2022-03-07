@@ -1,15 +1,22 @@
+import { useState } from "react";
+
 import "./App.css";
-import Button from "./Components/Button";
-import HeaderDate from "./Components/HeaderDate";
-import Lists from "./Components/Lists";
+import Header from "./Components/Header";
+import TodoList from "./Components/TodoList";
+import AddNewTask from "./Components/AddNewTask";
 
 function App() {
+  const [todos, setTodos] = useState([]);
+  // handling when the input will be submitted via inputForm
+  const addTodoHandler = (todo) => {
+    setTodos((prevTodos) => [...prevTodos, todo]);
+  };
   return (
     <div className="App">
       <div className="main">
-        <HeaderDate />
-        <Lists />
-        <Button />
+        <Header />
+        <TodoList todos={todos} />
+        <AddNewTask onAddTodo={addTodoHandler} />
       </div>
     </div>
   );
