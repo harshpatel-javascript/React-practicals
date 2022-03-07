@@ -1,5 +1,5 @@
 .list-container {
-  height: 300px;
+  height: 280px;
   overflow-y: scroll;
 }
 .list-container::-webkit-scrollbar {
