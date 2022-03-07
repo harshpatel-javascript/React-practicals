@@ -10,8 +10,9 @@ function AddNewTask({ onAddTodo }) {
   }
   const [enteredTodo, setEnteredTodo] = useState([]);
   // on form submission handler
-  function submitHandler(event) {
-    event.preventDefault();
+  function addNewTaskHandler(event) {
+    const { preventDefault } = event;
+    preventDefault();
     // error handling for not giving input
     if (enteredTodo === "") {
       alert("Please enter the todo.");
@@ -28,7 +29,7 @@ function AddNewTask({ onAddTodo }) {
     <div className="add-new-task-container">
       <form
         className={isClicked ? "form-container" : "form-container-hidden"}
-        onSubmit={submitHandler}
+        onSubmit={addNewTaskHandler}
       >
         <input
           type="text"
