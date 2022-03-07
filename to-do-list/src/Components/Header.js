@@ -2,7 +2,7 @@ import React from "react";
 
 import "./header.css";
 
-function HeaderDate() {
+function Header() {
   const date = new Date();
   const day = date.toLocaleString("en-US", { day: "2-digit" });
   const month = date.toLocaleString("en-US", { month: "short" });
@@ -22,4 +22,4 @@ function HeaderDate() {
   );
 }
 
-export default HeaderDate;
+export default Header;

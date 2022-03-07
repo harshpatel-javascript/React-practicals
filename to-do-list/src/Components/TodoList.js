@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import Button from "./Button";
+import AddNewTask from "./AddNewTask";
 // import InputForm from "./InputForm";
 import ListItem from "./ListItem";
 import defaultTodos from "./ListItems.json";
-import "./Lists.css";
+import "./TodoList.css";
 
-function Lists() {
+function TodoList() {
   const [todos, setTodos] = useState(defaultTodos);
   // handling when the input will be submitted via inputForm
   const addTodoHandler = (todo) => {
@@ -18,12 +18,14 @@ function Lists() {
   return (
     <>
       <div className="list-container">
-        {todos.map((todo) => (
-          <ListItem key={todo.id} todo={todo} />
-        ))}
+        {todos === "null" ? (
+          <ListItem />
+        ) : (
+          todos.map((todo) => <ListItem key={todo.id} todo={todo} />)
+        )}
       </div>
-      <Button onAddTodo={addTodoHandler} />
+      <AddNewTask onAddTodo={addTodoHandler} />
     </>
   );
 }
-export default Lists;
+export default TodoList;

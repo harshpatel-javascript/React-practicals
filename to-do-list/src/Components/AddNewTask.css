@@ -1,4 +1,4 @@
-.button-container {
+.add-new-task-container {
   padding-top: 1rem;
   position: relative;
 }
@@ -13,7 +13,7 @@
   opacity: 1;
   background-color: #4fe3a4;
 }
-.button-container {
+.add-new-task-container {
   position: fixed;
 }
 .form-container {

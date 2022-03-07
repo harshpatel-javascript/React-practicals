@@ -9,8 +9,12 @@ function ListItem(props) {
   };
   return (
     <div className={checked ? "list completed" : "list not-completed"}>
-      <p>{props.todo.name}</p>
-      <input type="checkbox" onChange={checkedHandler} />
+      <p>{props.todo.title}</p>
+      <input
+        className="list-checkbox"
+        type="checkbox"
+        onChange={checkedHandler}
+      />
     </div>
   );
 }

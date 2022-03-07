@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import "./Button.css";
-import plus from "../Images/icons8-plus-48.png";
+import "./AddNewTask.css";
+import plus from "../Images/plus.png";
 
-function Button(props) {
+function AddNewTask(props) {
   const [isClicked, setIsClicked] = useState(false);
   function clickHandler(e) {
     !isClicked ? setIsClicked(true) : setIsClicked(false);
@@ -25,7 +25,7 @@ function Button(props) {
     }
   }
   return (
-    <div className="button-container">
+    <div className="add-new-task-container">
       <form
         className={isClicked ? "form-container" : "form-container-hidden"}
         onSubmit={submitHandler}
@@ -43,4 +43,4 @@ function Button(props) {
   );
 }
 
-export default Button;
+export default AddNewTask;

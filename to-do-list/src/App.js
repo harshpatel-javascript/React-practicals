@@ -1,15 +1,16 @@
 import "./App.css";
-import Button from "./Components/Button";
-import HeaderDate from "./Components/Header";
-import Lists from "./Components/Lists";
+
+import Header from "./Components/Header";
+import TodoList from "./Components/TodoList";
+import AddNewTask from "./Components/AddNewTask.js";
 
 function App() {
   return (
     <div className="App">
       <div className="main">
-        <HeaderDate />
-        <Lists />
-        <Button />
+        <Header />
+        <TodoList />
+        <AddNewTask />
       </div>
     </div>
   );

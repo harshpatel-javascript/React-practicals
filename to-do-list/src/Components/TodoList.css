@@ -24,11 +24,11 @@
 .list p {
   font-size: 0.85rem;
 }
-.list input[type="checkbox"] {
+.list-checkbox {
   position: relative;
   cursor: pointer;
 }
-.list input[type="checkbox"]:before {
+.list-checkbox:before {
   content: "";
   display: block;
   position: absolute;
@@ -39,7 +39,7 @@
   background-color: #e9e9e9;
   border-radius: 50%;
 }
-.list input[type="checkbox"]:checked:before {
+.list-checkbox:checked:before {
   content: "";
   display: block;
   position: absolute;
@@ -49,12 +49,12 @@
   left: -5px;
   background-color: #4fe3a4;
 }
-.list input[type="checkbox"]:checked:after {
+.list-checkbox:checked:after {
   content: "";
   display: block;
   width: 12px;
   height: 12px;
-  border: 2px solid white;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   background-image: url("../Images/bandcamp-brands.svg");
   position: absolute;

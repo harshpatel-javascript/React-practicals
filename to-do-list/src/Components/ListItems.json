@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Hello there"
+    "title": "Start the promotion"
   },
   {
     "id": 2,
-    "name": "begin prmotion"
+    "title": "Buy New Sweatshirt"
   },
   {
     "id": 3,
-    "name": "Buy Sweatshirt"
+    "title": "Read a new article"
   },
   {
     "id": 4,
-    "name": "Try not to fall asleep"
+    "title": "Watch sherlock"
   },
   {
     "id": 5,
-    "name": "Watch 'sherlok'"
+    "title": "Begin QA for the product"
   },
   {
     "id": 6,
-    "name": "Begin QA for the product"
+    "title": "Go for teh walk"
   }
 ]
