@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./AddNewTask.css";
 import plus from "../Images/plus.png";
 
-function AddNewTask(props) {
+function AddNewTask({ onAddTodo }) {
   const [isClicked, setIsClicked] = useState(false);
   function clickHandler(e) {
     !isClicked ? setIsClicked(true) : setIsClicked(false);
@@ -18,9 +18,9 @@ function AddNewTask(props) {
     } else {
       const defaultTodos = {
         id: Math.random().toString(),
-        todo: enteredTodo,
+        title: enteredTodo,
       };
-      props.onAddTodo(defaultTodos);
+      onAddTodo(defaultTodos);
       setEnteredTodo("");
     }
   }
