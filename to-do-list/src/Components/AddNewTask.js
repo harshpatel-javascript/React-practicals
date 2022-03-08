@@ -4,15 +4,14 @@ import "./AddNewTask.css";
 import plus from "../Images/plus.png";
 
 function AddNewTask({ onAddTodo }) {
+  const [enteredTodo, setEnteredTodo] = useState([]);
   const [isClicked, setIsClicked] = useState(false);
   function clickHandler() {
     !isClicked ? setIsClicked(true) : setIsClicked(false);
   }
-  const [enteredTodo, setEnteredTodo] = useState([]);
   // on form submission handler
   function addNewTaskHandler(event) {
-    const { preventDefault } = event;
-    preventDefault();
+    event.preventDefault();
     // error handling for not giving input
     if (enteredTodo === "") {
       alert("Please enter the todo.");
@@ -25,6 +24,12 @@ function AddNewTask({ onAddTodo }) {
       setEnteredTodo("");
     }
   }
+  const keyPressHandler = (event) => {
+    // console.log(event.code);
+    if (event.code === "Escape") {
+      setIsClicked(false);
+    }
+  };
   return (
     <div className="add-new-task-container">
       <form
@@ -34,10 +39,15 @@ function AddNewTask({ onAddTodo }) {
         <input
           type="text"
           value={enteredTodo}
+          onKeyDown={keyPressHandler}
           onChange={(e) => setEnteredTodo(e.target.value)}
+          placeholder="Enter Your Task"
         />
       </form>
-      <button className="btn" onClick={clickHandler}>
+      <button
+        className={isClicked ? "btn-hidden" : "btn"}
+        onClick={clickHandler}
+      >
         <img src={plus} alt="plus" />
       </button>
     </div>

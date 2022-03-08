@@ -6,6 +6,12 @@ function HeaderDate() {
   const month = date.toLocaleString("en-US", { month: "short" });
   const year = date.toLocaleString("en-US", { year: "numeric" });
   const weekday = date.toLocaleString("en-us", { weekday: "long" });
+  //adding the date into localstorage
+  // useEffect(() => {
+  //   const date = new Date();
+  //   localStorage.setItem("date", JSON.stringify(date.getTime()));
+  // }, []);
+  localStorage.setItem("date", JSON.stringify(date.getTime()));
   return (
     <div className="header">
       <div className="date">
