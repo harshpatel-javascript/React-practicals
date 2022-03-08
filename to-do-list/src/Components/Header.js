@@ -1,19 +1,20 @@
 import React from "react";
-
-import "./header.css";
-
-function Header() {
+import "./Header.css";
+function HeaderDate() {
   const date = new Date();
   const day = date.toLocaleString("en-US", { day: "2-digit" });
   const month = date.toLocaleString("en-US", { month: "short" });
   const year = date.toLocaleString("en-US", { year: "numeric" });
   const weekday = date.toLocaleString("en-us", { weekday: "long" });
+  //taking timestamp of now and storing it in local storage
+  const now = date.getTime();
+  localStorage.setItem("date", JSON.stringify(now));
   return (
     <div className="header">
       <div className="date">
         <div className="day">{day}</div>
         <div>
-          <div className="month">{month.toUpperCase()}</div>
+          <div className="month">{month}</div>
           <div className="year">{year}</div>
         </div>
       </div>
@@ -22,4 +23,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderDate;

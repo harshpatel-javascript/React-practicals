@@ -1,15 +1,17 @@
 import React from "react";
 
-import ListItem from "./ListItem";
+import ListItems from "./ListItems";
 import "./TodoList.css";
 
 function TodoList({ todos }) {
   return (
-    <>
-      <div className="list-container">
-        {todos && todos.map((todo) => <ListItem key={todo.id} todo={todo} />)}
-      </div>
-    </>
+    <div className="list-container">
+      {todos.length < 1 ? (
+        <div className="empty-statement">No Todo List for Today.</div>
+      ) : (
+        todos.map((todo) => <ListItems key={todo.id} todo={todo} />)
+      )}
+    </div>
   );
 }
 export default TodoList;
