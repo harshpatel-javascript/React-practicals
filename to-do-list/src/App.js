@@ -21,7 +21,6 @@ function getDataFromLocalStorage() {
     return [];
   }
 }
-
 function App() {
   const [todos, setTodos] = useState(getDataFromLocalStorage());
   const addTodoHandler = (todo) => {
