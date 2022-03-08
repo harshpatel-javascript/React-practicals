@@ -6,12 +6,14 @@ import TodoList from "./Components/TodoList";
 import AddNewTask from "./Components/AddNewTask";
 
 function getDataFromLocalStorage() {
-  // const localDate = new Date().getTime();
-  // const date = localStorage.getItem("date");
-  // if (date !== localDate) {
-  //   localStorage.clear();
-  // }
-
+  const hours = 24;
+  const localDate = new Date();
+  const now = localDate.getTime();
+  let setupedTime = localStorage.getItem("date"); //getiing from localstorage
+  if (now - setupedTime > hours * 60 * 60 * 1000) {
+    localStorage.clear();
+    console.log("localstorage cleared");
+  }
   const data = localStorage.getItem("todos");
   if (data) {
     return JSON.parse(data);
