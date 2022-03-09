@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import taskIcon from "../Images//task-completed-icon.svg";
+import taskIcon from "../Images/task-completed-icon.svg";
 function ListItems({ todo }) {
   const [checked, setChecked] = useState(localStorage.getItem(todo.id));
   // state handling as per the input:checkbox
