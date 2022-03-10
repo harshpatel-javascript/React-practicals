@@ -1,6 +1,8 @@
 import React from "react";
-import "./Header.css";
-function HeaderDate() {
+
+import "./header.css";
+
+function Header() {
   const date = new Date();
   const day = date.toLocaleString("en-US", { day: "2-digit" });
   const month = date.toLocaleString("en-US", { month: "short" });
@@ -14,7 +16,7 @@ function HeaderDate() {
       <div className="date">
         <div className="day">{day}</div>
         <div>
-          <div className="month">{month}</div>
+          <div className="month">{month.toUpperCase()}</div>
           <div className="year">{year}</div>
         </div>
       </div>
@@ -23,4 +25,4 @@ function HeaderDate() {
   );
 }
 
-export default HeaderDate;
+export default Header;

@@ -21,5 +21,5 @@
   display: none;
 }
 .btn-hidden {
-  visibility: hidden;
+  display: none;
 }
