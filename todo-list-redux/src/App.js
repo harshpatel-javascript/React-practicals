@@ -9,7 +9,7 @@ import { deleteTodo } from "./redux/todo/todoAction";
 
 function App() {
   const dispatch = useDispatch();
-  const hours = 1;
+  const hours = 24;
   const localDate = new Date();
   const currentTime = localDate.getTime();
   let setupedTime = localStorage.getItem("date"); //getiing date from localstorage
