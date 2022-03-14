@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./header.css";
+import "../css/header.css";
 
 function Header() {
   const date = new Date();

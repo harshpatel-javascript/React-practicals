@@ -1,40 +1,28 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 import "./App.css";
 import Header from "./Components/Header";
 import TodoList from "./Components/TodoList";
 import AddNewTask from "./Components/AddNewTask";
+import { useDispatch } from "react-redux";
+import { deleteTodo } from "./redux/todo/todoAction";
 
-function getDataFromLocalStorage() {
-  const hours = 24;
+function App() {
+  const dispatch = useDispatch();
+  const hours = 1;
   const localDate = new Date();
-  const now = localDate.getTime();
-  let setupedTime = localStorage.getItem("date"); //getiing from localstorage
-  if (now - setupedTime > hours * 60 * 60 * 1000) {
-    localStorage.clear();
+  const currentTime = localDate.getTime();
+  let setupedTime = localStorage.getItem("date"); //getiing date from localstorage
+  if (currentTime - setupedTime > hours * 60 * 60 * 1000) {
+    dispatch(deleteTodo(currentTime, setupedTime));
     console.log("localstorage cleared");
   }
-  const data = localStorage.getItem("todos");
-  if (data) {
-    return JSON.parse(data);
-  } else {
-    return [];
-  }
-}
-function App() {
-  const [todos, setTodos] = useState(getDataFromLocalStorage());
-  const addTodoHandler = (todo) => {
-    setTodos((todos) => [...todos, todo]);
-  };
-  useEffect(() => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  }, [todos]);
   return (
     <div className="App">
       <div className="main">
         <Header />
-        <TodoList todos={todos} />
-        <AddNewTask onAddTodo={addTodoHandler} />
+        <TodoList />
+        <AddNewTask />
       </div>
     </div>
   );

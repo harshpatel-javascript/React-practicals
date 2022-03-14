@@ -1,15 +1,25 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-import ListItems from "./ListItem";
-import "./TodoList.css";
+import TodoListItem from "./TodoListItem";
+import "../css/TodoList.css";
 
-function TodoList({ todos }) {
+function TodoList() {
+  const todos = useSelector((state) => {
+    return state.todos;
+  });
   return (
     <div className="list-container">
       {todos.length < 1 ? (
         <div className="empty-statement">No Todo List for Today.</div>
       ) : (
-        todos.map((todo) => <ListItems key={todo.id} todo={todo} />)
+        todos.map((todo) => (
+          <TodoListItem
+            key={todo.id}
+            todo={todo}
+            isCompleted={todo.isCompleted}
+          />
+        ))
       )}
     </div>
   );
