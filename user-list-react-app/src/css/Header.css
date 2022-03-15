@@ -1,0 +1,8 @@
+.header {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  justify-items: center;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 16px;
+}

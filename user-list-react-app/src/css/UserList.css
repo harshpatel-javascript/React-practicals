@@ -1,0 +1,54 @@
+.user-container {
+  padding: 1rem 2rem;
+  max-width: 1000px;
+  background-color: white;
+}
+.user-list {
+  background-color: #ffffff;
+}
+.user-item {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.user-img {
+  height: 45px;
+  width: 45px;
+  background-position: cover;
+  border-radius: 50%;
+}
+.user-detail {
+  display: flex;
+  flex-direction: column;
+}
+.user-email {
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+.user-status {
+  color: #69cda3;
+}
+.user-access {
+  color: #7a797a;
+}
+#status,
+#access {
+  color: #7a797a;
+  width: 80px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.icon {
+  color: #b8b8b8;
+}
