@@ -36,10 +36,7 @@ const todoReducer = (state = initialState, action) => {
     case REMOVE_TODO:
       const { date, setupedTime } = action.payload;
       if (date === setupedTime) {
-        return {
-          ...state,
-          todos: [...state.todos],
-        };
+        return state;
       }
       return {
         ...state,

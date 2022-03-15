@@ -10,6 +10,7 @@ export const addTodo = (task) => {
     },
   };
 };
+
 export const completedTodo = (id) => {
   return {
     type: TOGGLE_TODO,
@@ -18,6 +19,7 @@ export const completedTodo = (id) => {
     },
   };
 };
+
 export const deleteTodo = (currentTime, setupedTime) => {
   return {
     type: REMOVE_TODO,
