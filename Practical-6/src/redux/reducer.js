@@ -3,20 +3,40 @@ import {
   TOGGLE_STATUS,
   MOUSE_LEAVE,
   DELETE_USER,
+  FETCH_USERS_REQUEST,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAILURE,
 } from "./types";
-import { userData } from "../components/userData";
 
 const initialState = {
+  loading: false,
   cardData: false,
-  definedData: userData,
+  error: "",
+  definedData: [],
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case FETCH_USERS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case FETCH_USERS_SUCCESS:
+      return {
+        ...state,
+        definedData: action.payload.data,
+      };
+    case FETCH_USERS_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
     case PASS_DATA_TO_CARD:
       return {
+        ...state,
         cardData: action.payload,
-        definedData: userData,
+        // definedData: action.payload,
       };
     case TOGGLE_STATUS:
       // const { id } = action.payload;
@@ -35,7 +55,6 @@ const reducer = (state = initialState, action) => {
     case MOUSE_LEAVE:
       return {
         ...state,
-        definedData: userData,
       };
     case DELETE_USER:
       const { id } = action.payload;

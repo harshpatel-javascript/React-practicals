@@ -15,7 +15,7 @@ function Card({ data }) {
         <div className="online"></div>
       </div>
       <div className="email">{data.email}</div>
-      <div className="plan">Your Plan: {data.plan}</div>
+      <div className="plan">Your Plan: standard</div>
       <div>
         <button className="btn">{data.status} user</button>
       </div>
