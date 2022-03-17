@@ -3,7 +3,7 @@ import UserContainer from "./components/UserContainer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <UserContainer />
     </div>
   );
