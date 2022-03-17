@@ -5,9 +5,9 @@ import "../css/Header.css";
 function Header() {
   return (
     <div className="header">
-      <div>Name</div>
-      <div>Status</div>
-      <div>Access</div>
+      <div className="name">Name</div>
+      <div className="status">Status</div>
+      <div className="access">Access</div>
     </div>
   );
 }

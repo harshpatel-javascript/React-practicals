@@ -1,11 +1,3 @@
-.user-container {
-  padding: 1rem 2rem;
-  max-width: 1000px;
-  background-color: white;
-}
-.user-list {
-  background-color: #ffffff;
-}
 .user-item {
   padding-top: 1rem;
   display: grid;
@@ -19,6 +11,9 @@
   align-items: center;
   gap: 1rem;
 }
+p {
+  margin-bottom: 0;
+}
 .user-img {
   height: 45px;
   width: 45px;
@@ -28,6 +23,9 @@
 .user-detail {
   display: flex;
   flex-direction: column;
+}
+.user-name {
+  color: #4e4f54;
 }
 .user-email {
   font-weight: 400;
@@ -43,7 +41,6 @@
 #access {
   color: #7a797a;
   width: 80px;
-  border: none;
   font-size: 14px;
   font-weight: bold;
   background-color: transparent;
@@ -51,4 +48,56 @@
 }
 .icon {
   color: #b8b8b8;
+}
+@media screen and (max-width: 1000px) {
+  .user-item {
+    padding: 0;
+    max-width: 300px;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 100px 100px 100px 100px;
+  }
+  .user-details {
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  .user-status {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .user-access {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .user-access-icon {
+    grid-row: 4/5;
+    grid-column: 3/4;
+  }
+}
+@media screen and (max-width: 800px) {
+  .user-item {
+    padding: 0;
+    max-width: 300px;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 100px 100px 100px;
+  }
+  .user-details {
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  .user-status {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .user-access {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .user-access-icon {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
 }

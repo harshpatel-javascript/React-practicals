@@ -1,21 +1,24 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
-import "../css/UserList.css";
-import { userData } from "./userData";
+import "../css/UserContainer.css";
 import Card from "./Card";
 import UserList from "./UserList";
 import Header from "./Header";
 
 function UserContainer() {
+  //getting the detail for card as hovering
+  const { definedData, cardData } = useSelector((state) => state);
   return (
     <>
       <div className="user-container">
         <Header />
-        {userData.map((data) => (
+        {definedData.map((data) => (
           <UserList data={data} key={data.id} />
         ))}
       </div>
-      <Card />
+      {/* card data */}
+      {cardData && <Card data={cardData} />}
     </>
   );
 }

@@ -1,29 +1,36 @@
 import React from "react";
-import { userData } from "./userData";
+import { ProgressBar } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import "../css/Card.css";
-function Card() {
+
+function Card({ data }) {
   return (
     <div className="card-container">
       <div>
-        <img src={userData[0].avatar} alt="" className="img" />
+        <img src={data.avatar} alt="user-avatar" className="img" />
       </div>
-      <div className="name">{userData[0].name}</div>
-      <div className="email">{userData[0].email}</div>
-      <div className="plan">Your Plan : {userData[0].plan}</div>
+      <div className="name-flex">
+        <div className="name">{data.name}</div>
+        <div className="online"></div>
+      </div>
+      <div className="email">{data.email}</div>
+      <div className="plan">Your Plan: {data.plan}</div>
       <div>
-        <button className="btn">{userData[0].status} user</button>
+        <button className="btn">{data.status} user</button>
       </div>
-      <div className="progress-bar">
-        <p>Plan uses</p>
-        <progress value="32" max="100" />
+      <div className="progress-container">
+        <p>Plan Uses</p>
+        <ProgressBar now={data.progressValue} />
       </div>
-      <div className="reviews">
+      {/* class name */}
+      <div className="analysis">
         <div className="click-reviews">
-          2450
+          {data.reviewed}
           <div className="text">clicks reviewed</div>
         </div>
         <div className="monthly-clicked">
-          5000
+          {data.clicks}
           <div className="text">Monthly Clicked</div>
         </div>
       </div>
