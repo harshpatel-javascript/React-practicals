@@ -5,29 +5,19 @@ import {
   DELETE_USER,
 } from "./types";
 
-export const passDataToCard = (
-  empId,
-  empName,
-  empEmail,
-  empStatus,
-  empPlan,
-  empAvatar,
-  empProgressValue,
-  empReviewed,
-  empClicks
-) => {
+export const passDataToCard = ({ data }) => {
   return {
     type: PASS_DATA_TO_CARD,
     payload: {
-      id: empId,
-      name: empName,
-      email: empEmail,
-      status: empStatus,
-      plan: empPlan,
-      avatar: empAvatar,
-      progressValue: empProgressValue,
-      reviewed: empReviewed,
-      clicks: empClicks,
+      id: data.id,
+      name: data.name,
+      email: data.email,
+      status: data.status,
+      plan: data.plan,
+      avatar: data.avatar,
+      progressValue: data.progressValue,
+      reviewed: data.reviewed,
+      clicks: data.clicks,
     },
   };
 };
