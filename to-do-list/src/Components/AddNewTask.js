@@ -32,6 +32,7 @@ function AddNewTask({ onAddTodo }) {
   };
   return (
     <div className="add-new-task-container">
+      {/* not like this with conditional rendering we have to specify like if no todo list then button otherwise button */}
       <form
         className={isClicked ? "form-container" : "form-container-hidden"}
         onSubmit={addNewTaskHandler}

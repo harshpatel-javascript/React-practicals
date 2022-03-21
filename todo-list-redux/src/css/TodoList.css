@@ -1,7 +1,7 @@
 .list-container {
-  height: 280px;
+  height: 260px;
   position: relative;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .empty-statement {
   font-size: 0.85rem;
@@ -16,6 +16,7 @@
 } */
 .list {
   height: 35px;
+  max-width: 150px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,9 +28,9 @@
 .completed {
   color: #91959b;
 }
-.list:first-child {
+/* .list:first-child {
   padding-top: 1.5rem;
-}
+} */
 .list p {
   font-size: 0.85rem;
   overflow: hidden;
@@ -62,11 +63,8 @@
   left: -0px;
 }
 .task-icon {
-  height: 12px;
-  width: 12px;
   position: absolute;
   right: 2px;
-  border: 2px solid #4fe3a4;
   border-radius: 50%;
   z-index: 1;
 }
