@@ -6,6 +6,7 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE,
+  CHANGE_PAGE,
 } from "./types";
 import axios from "axios";
 export const fetchUsersRequest = () => {
@@ -28,28 +29,15 @@ export const fetchUsersFailure = (error) => {
   };
 };
 
-export const passDataToCard = (
-  empId,
-  empFirstName,
-  empLastName,
-  empEmail,
-  empStatus,
-  empAvatar,
-  empProgressValue,
-  empReviewed,
-  empClicks
-) => {
+export const passDataToCard = ({ data }) => {
   return {
     type: PASS_DATA_TO_CARD,
     payload: {
-      id: empId,
-      name: empFirstName + " " + empLastName,
-      email: empEmail,
-      status: empStatus,
-      avatar: empAvatar,
-      progressValue: empProgressValue,
-      reviewed: empReviewed,
-      clicks: empClicks,
+      id: data.id,
+      name: data.first_name + " " + data.last_name,
+      email: data.email,
+      status: data.status,
+      avatar: data.avatar,
     },
   };
 };
@@ -79,11 +67,20 @@ export const deleteUser = (id) => {
   };
 };
 
-export const fetchUsers = () => {
+export const handlePage = (page, data) => {
+  return {
+    type: CHANGE_PAGE,
+    payload: {
+      activePage: page,
+    },
+  };
+};
+
+export const fetchUsers = (page) => {
   return (dispatch) => {
     dispatch(fetchUsersRequest);
     axios
-      .get("https://reqres.in/api/users?page=1")
+      .get(`https://reqres.in/api/users?page=${page}`)
       .then((response) => {
         const users = response.data;
         dispatch(fetchUsersSuccess(users));

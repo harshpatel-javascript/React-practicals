@@ -12,19 +12,7 @@ import "../css/UserList.css";
 function UserList({ data }) {
   const dispatch = useDispatch();
   const onMouseEnterHandler = () => {
-    dispatch(
-      passDataToCard(
-        data.id,
-        data.last_name,
-        data.first_name,
-        data.email,
-        data.status,
-        data.avatar,
-        data.progressValue,
-        data.reviewed,
-        data.clicks
-      )
-    );
+    dispatch(passDataToCard({ data }));
   };
   const onMouseLeaveHandler = () => {
     dispatch(onMouseLeave());
