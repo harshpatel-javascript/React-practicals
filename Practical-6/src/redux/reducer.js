@@ -45,7 +45,6 @@ const reducer = (state = initialState, action) => {
         activePage: action.payload.activePage,
       };
     case TOGGLE_STATUS:
-      // const { id } = action.payload;
       return {
         ...state,
         definedData: state.definedData.map((data) => {
