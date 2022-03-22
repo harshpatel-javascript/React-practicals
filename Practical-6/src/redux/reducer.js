@@ -66,7 +66,7 @@ const reducer = (state = initialState, action) => {
       const { id } = action.payload;
       return {
         ...state,
-        fetchedData: state.definedData.filter((data) => data.id !== id, 1),
+        fetchedData: state.fetchedData.filter((data) => data.id !== id, 1),
       };
     default:
       return state;
