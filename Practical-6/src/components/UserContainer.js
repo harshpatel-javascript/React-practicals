@@ -9,7 +9,7 @@ import Pagination from "react-bootstrap/Pagination";
 import { fetchUsers, handlePage } from "../redux/action";
 
 function UserContainer() {
-  const { loading, cardData, definedData, error, activePage } = useSelector(
+  const { loading, cardData, fetchedData, error, activePage } = useSelector(
     (state) => state
   );
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ function UserContainer() {
     <>
       <div className="user-container">
         <Header />
-        {definedData.map((data) => (
+        {fetchedData.map((data) => (
           <UserList data={data} key={data.id} />
         ))}
         <Pagination className="pagination">

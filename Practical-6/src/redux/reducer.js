@@ -13,11 +13,12 @@ const initialState = {
   loading: false,
   cardData: false,
   error: "",
-  definedData: [],
+  fetchedData: [],
   activePage: 1,
 };
 
 const reducer = (state = initialState, action) => {
+  console.log();
   switch (action.type) {
     case FETCH_USERS_REQUEST:
       return {
@@ -27,7 +28,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_USERS_SUCCESS:
       return {
         ...state,
-        definedData: action.payload.data,
+        fetchedData: action.payload.data,
       };
     case FETCH_USERS_FAILURE:
       return {
@@ -47,7 +48,7 @@ const reducer = (state = initialState, action) => {
     case TOGGLE_STATUS:
       return {
         ...state,
-        definedData: state.definedData.map((data) => {
+        fetchedData: state.definedData.map((data) => {
           if (data.id === action.payload.id) {
             return {
               ...data,
@@ -65,7 +66,7 @@ const reducer = (state = initialState, action) => {
       const { id } = action.payload;
       return {
         ...state,
-        definedData: state.definedData.filter((data) => data.id !== id, 1),
+        fetchedData: state.definedData.filter((data) => data.id !== id, 1),
       };
     default:
       return state;

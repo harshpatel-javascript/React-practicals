@@ -1,5 +1,5 @@
 import React from "react";
-import { Lock, Trash2 } from "react-feather";
+import { Trash2 } from "react-feather";
 import { useDispatch } from "react-redux";
 import {
   passDataToCard,
@@ -53,15 +53,9 @@ function UserList({ data }) {
           <option value="manager">Manager</option>
         </select>
       </div>
-      {data.access === "Owner" ? (
-        <div className="access-icon">
-          <Lock className="icon" />
-        </div>
-      ) : (
-        <div className="access-icon">
-          <Trash2 className="icon" onClick={clickHandler} />
-        </div>
-      )}
+      <div className="access-icon">
+        <Trash2 className="icon" onClick={clickHandler} />
+      </div>
     </div>
   );
 }
