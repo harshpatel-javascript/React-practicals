@@ -1,9 +1,9 @@
 // import { useState, useEffect } from "react";
 
 import "./App.css";
-import Header from "./Components/Header";
-import TodoList from "./Components/TodoList";
-import AddNewTask from "./Components/AddNewTask";
+import Header from "./components/Header";
+import TodoList from "./components/TodoList";
+import AddNewTask from "./components/AddNewTask";
 import { useDispatch } from "react-redux";
 import { deleteTodo } from "./redux/todo/todoAction";
 

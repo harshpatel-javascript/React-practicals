@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import "../css/AddNewTask.css";
-import plus from "../Images/plus.png";
+import plus from "../images/plus.png";
 import { addTodo } from "../redux/todo/todoAction";
 
 function AddNewTask() {
@@ -17,7 +17,7 @@ function AddNewTask() {
     let { preventDefault } = event;
     preventDefault.call(event);
     // error handling for not giving input
-    if (enteredTodo === "") {
+    if (enteredTodo.trim("") === "") {
       alert("Please enter the todo.");
     } else {
       dispatch(addTodo(enteredTodo));

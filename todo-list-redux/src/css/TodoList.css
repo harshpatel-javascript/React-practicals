@@ -11,9 +11,6 @@
   left: 1.5rem;
   color: #91959b;
 }
-/* .list-container::-webkit-scrollbar {
-  display: none; /* Safari and Chrome
-} */
 .list {
   height: 35px;
   max-width: 150px;
@@ -28,9 +25,7 @@
 .completed {
   color: #91959b;
 }
-/* .list:first-child {
-  padding-top: 1.5rem;
-} */
+
 .list p {
   font-size: 0.85rem;
   overflow: hidden;
