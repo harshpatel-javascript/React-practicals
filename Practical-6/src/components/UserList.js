@@ -18,7 +18,7 @@ function UserList({ data }) {
   const onMouseLeaveHandler = () => {
     dispatch(onMouseLeave());
   };
-  const clickHandler = () => {
+  const deleteHandler = () => {
     dispatch(deleteUser(data.id));
   };
   const dropDownMenuHandler = (e) => {
@@ -55,7 +55,7 @@ function UserList({ data }) {
         </select>
       </div>
       <div className="access-icon">
-        <Trash2 className="icon" onClick={clickHandler} />
+        <Trash2 className="icon" onClick={deleteHandler} />
       </div>
     </div>
   );
