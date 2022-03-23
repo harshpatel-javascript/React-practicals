@@ -1,14 +1,15 @@
 import React from "react";
 import { Trash2 } from "react-feather";
 import { useDispatch } from "react-redux";
+
 import {
   passDataToCard,
   deleteUser,
   toggleStatus,
   onMouseLeave,
 } from "../redux/action";
-
 import "../css/UserList.css";
+
 function UserList({ data }) {
   const dispatch = useDispatch();
   const onMouseEnterHandler = () => {
