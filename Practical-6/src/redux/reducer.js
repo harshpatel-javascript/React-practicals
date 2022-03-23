@@ -48,7 +48,7 @@ const reducer = (state = initialState, action) => {
     case TOGGLE_STATUS:
       return {
         ...state,
-        fetchedData: state.definedData.map((data) => {
+        fetchedData: state.fetchedData.map((data) => {
           if (data.id === action.payload.id) {
             return {
               ...data,
