@@ -3,7 +3,7 @@
   grid-template-columns: repeat(4, 220px);
   justify-items: center;
   font-weight: bold;
-  padding: 1rem;
+  padding: 16px;
   font-size: 16px;
 }
 @media screen and (max-width: 1000px) {

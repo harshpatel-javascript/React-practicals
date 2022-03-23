@@ -1,5 +1,5 @@
 .user-item {
-  padding-top: 1rem;
+  padding-top: 16px;
   display: grid;
   grid-template-columns: repeat(4, 220px);
   align-content: center;
@@ -9,8 +9,8 @@
 .user-details {
   display: grid;
   grid-template-columns: 50px 200px;
-  padding-left: 4rem;
-  gap: 1rem;
+  padding-left: 64px;
+  gap: 16px;
 }
 p {
   margin-bottom: 0;
