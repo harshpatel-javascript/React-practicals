@@ -8,20 +8,20 @@ function Card({ data }) {
   const monthlyClicks = Math.floor(Math.random() * 5000);
   const clicksReviewed = Math.floor(Math.random() * 2000);
   const progressValue = (monthlyClicks + clicksReviewed) / 10;
-
+  const { avatar, name, status, email } = data;
   return (
     <div className="card-container">
       <div>
-        <img src={data.avatar} alt="user-avatar" className="img" />
+        <img src={avatar} alt="user-avatar" className="img" />
       </div>
       <div className="name-flex">
-        <div className="name">{data.name}</div>
+        <div className="name">{name}</div>
         <div className="online"></div>
       </div>
-      <div className="email">{data.email}</div>
+      <div className="email">{email}</div>
       <div className="plan">Your Plan: Standard</div>
       <div>
-        <button className="btn">{data.status} user</button>
+        <button className="btn">{status} user</button>
       </div>
       <div className="progress-container">
         <p>Plan Uses</p>
