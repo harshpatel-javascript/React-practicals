@@ -29,7 +29,7 @@ function UserContainer() {
         {fetchedData.map((data) => (
           <UserList data={data} key={data.id} />
         ))}
-        <Pagination className="pagination">
+        <Pagination>
           <Pagination.Prev />
           <Pagination.Item onClick={() => dispatch(handlePage(1))}>
             1
