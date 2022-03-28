@@ -59,7 +59,6 @@ p {
     grid-template-columns: 100px 100px 100px 100px;
   }
   .user-details {
-    /* text-align: center; */
     grid-column: 1/4;
     grid-row: 1/2;
     gap: 10px;

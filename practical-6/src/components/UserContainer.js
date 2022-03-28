@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "../css/UserContainer.css";
 import Card from "./Card";
 import UserList from "./UserList";
-// import Header from "./Header";
 import Pagination from "react-bootstrap/Pagination";
 import { fetchUsers, handlePage } from "../redux/action";
 
