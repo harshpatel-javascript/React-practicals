@@ -75,7 +75,7 @@ export const fetchUsers = (page) => {
   return (dispatch) => {
     dispatch(fetchUsersRequest);
     axios
-      .get(`${process.env.staging.REACT_APP_API_URL}?page=${page}`)
+      .get(`${process.env.REACT_APP_API_URL}?page=${page}`)
       .then((response) => {
         const users = response.data;
         dispatch(fetchUsersSuccess(users));
