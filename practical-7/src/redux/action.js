@@ -10,7 +10,6 @@ import {
   CHANGE_PAGE,
 } from "./types";
 
-// require("dotenv").config();
 export const fetchUsersRequest = () => {
   return {
     type: FETCH_USERS_REQUEST,
@@ -76,7 +75,7 @@ export const fetchUsers = (page) => {
   return (dispatch) => {
     dispatch(fetchUsersRequest);
     axios
-      .get(`https://reqres.in/api/users?page=${page}`)
+      .get(`${process.env.staging.REACT_APP_API_URL}?page=${page}`)
       .then((response) => {
         const users = response.data;
         dispatch(fetchUsersSuccess(users));

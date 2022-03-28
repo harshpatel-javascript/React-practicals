@@ -1,6 +1,6 @@
 .card-container {
   width: 270px;
-  padding: 32px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -9,8 +9,8 @@
   top: 80px;
   right: 160px;
   background-color: #fff;
-  border-radius: 10%;
-  box-shadow: -1px 1px 14px 2px #000000ed;
+  border-radius: 50px;
+  box-shadow: 22px 20px 32px 5px #b8b8b8;
 }
 .img {
   height: 100px;
