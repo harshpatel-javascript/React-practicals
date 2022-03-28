@@ -1,0 +1,107 @@
+.user-item {
+  padding-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.user-details {
+  display: grid;
+  grid-template-columns: 50px 200px;
+  padding-left: 64px;
+  gap: 16px;
+}
+p {
+  margin-bottom: 0;
+}
+.user-img {
+  height: 45px;
+  width: 45px;
+  background-position: cover;
+  border-radius: 50%;
+}
+.user-detail {
+  display: flex;
+  flex-direction: column;
+}
+.user-name {
+  color: #4e4f54;
+}
+.user-email {
+  font-weight: 400;
+  font-size: 0.85rem;
+}
+.user-status {
+  color: #69cda3;
+}
+.user-access {
+  color: #7a797a;
+}
+#status,
+#access {
+  color: #7a797a;
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.icon {
+  cursor: pointer;
+  color: #b8b8b8;
+}
+@media screen and (max-width: 1000px) {
+  .user-item {
+    padding: 0;
+    max-width: 300px;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 100px 100px 100px 100px;
+  }
+  .user-details {
+    padding-left: 20px;
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    gap: 10px;
+  }
+  .user-status {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .user-access {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .user-access-icon {
+    grid-row: 4/5;
+    grid-column: 3/4;
+  }
+}
+@media screen and (max-width: 800px) {
+  .user-item {
+    padding: 0;
+    max-width: 300px;
+    display: grid;
+    grid-template-rows: 50px 50px;
+    grid-template-columns: 100px 100px 100px;
+  }
+  .user-details {
+    text-align: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  .user-status {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+  .user-access {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+  .user-access-icon {
+    grid-row: 2/3;
+    grid-column: 3/4;
+  }
+}
