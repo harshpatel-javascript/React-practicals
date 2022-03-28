@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
   PASS_DATA_TO_CARD,
   TOGGLE_STATUS,
@@ -8,7 +9,8 @@ import {
   FETCH_USERS_FAILURE,
   CHANGE_PAGE,
 } from "./types";
-import axios from "axios";
+
+// require("dotenv").config();
 export const fetchUsersRequest = () => {
   return {
     type: FETCH_USERS_REQUEST,
@@ -29,16 +31,10 @@ export const fetchUsersFailure = (error) => {
   };
 };
 
-export const passDataToCard = ({ data }) => {
+export const passDataToCard = (data) => {
   return {
     type: PASS_DATA_TO_CARD,
-    payload: {
-      id: data.id,
-      name: data.first_name + " " + data.last_name,
-      email: data.email,
-      status: data.status,
-      avatar: data.avatar,
-    },
+    payload: data,
   };
 };
 
