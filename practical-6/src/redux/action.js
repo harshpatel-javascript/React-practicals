@@ -1,3 +1,5 @@
+import axios from "axios";
+
 import {
   PASS_DATA_TO_CARD,
   TOGGLE_STATUS,
@@ -8,10 +10,23 @@ import {
   FETCH_USERS_FAILURE,
   CHANGE_PAGE,
 } from "./types";
-import axios from "axios";
+
 export const fetchUsersRequest = () => {
   return {
     type: FETCH_USERS_REQUEST,
+  };
+};
+
+export const fetchUsers = (page) => {
+  return (dispatch) => {
+    dispatch(fetchUsersRequest);
+    axios
+      .get(`https://reqres.in/api/users?page=${page}`)
+      .then((response) => {
+        const users = response.data;
+        dispatch(fetchUsersSuccess(users));
+      })
+      .catch((error) => dispatch(fetchUsersFailure(error.message)));
   };
 };
 
@@ -73,18 +88,5 @@ export const handlePage = (page, data) => {
     payload: {
       activePage: page,
     },
-  };
-};
-
-export const fetchUsers = (page) => {
-  return (dispatch) => {
-    dispatch(fetchUsersRequest);
-    axios
-      .get(`https://reqres.in/api/users?page=${page}`)
-      .then((response) => {
-        const users = response.data;
-        dispatch(fetchUsersSuccess(users));
-      })
-      .catch((error) => dispatch(fetchUsersFailure(error.message)));
   };
 };

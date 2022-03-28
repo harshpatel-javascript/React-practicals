@@ -18,7 +18,6 @@ p {
 .user-img {
   height: 45px;
   width: 45px;
-  background-position: cover;
   border-radius: 50%;
 }
 .user-detail {
@@ -60,19 +59,18 @@ p {
     grid-template-columns: 100px 100px 100px 100px;
   }
   .user-details {
-    padding-left: 20px;
-    text-align: center;
+    /* text-align: center; */
     grid-column: 1/4;
     grid-row: 1/2;
     gap: 10px;
   }
   .user-status {
     grid-row: 2/3;
-    grid-column: 1/2;
+    grid-column: 2/3;
   }
   .user-access {
     grid-row: 2/3;
-    grid-column: 2/3;
+    grid-column: 3/4;
   }
   .user-access-icon {
     grid-row: 4/5;
@@ -91,6 +89,8 @@ p {
     text-align: center;
     grid-column: 1/4;
     grid-row: 1/2;
+    padding-left: 10px;
+    gap: 0;
   }
   .user-status {
     grid-row: 2/3;

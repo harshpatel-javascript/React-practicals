@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../css/UserContainer.css";
 import Card from "./Card";
 import UserList from "./UserList";
-import Header from "./Header";
+// import Header from "./Header";
 import Pagination from "react-bootstrap/Pagination";
 import { fetchUsers, handlePage } from "../redux/action";
 
@@ -17,7 +17,6 @@ function UserContainer() {
     dispatch(fetchUsers(activePage));
   }, [dispatch, activePage]);
   //getting the detail for card as hovering
-
   return loading ? (
     <h2>Loading</h2>
   ) : error ? (
@@ -25,7 +24,11 @@ function UserContainer() {
   ) : (
     <>
       <div className="user-container">
-        <Header />
+        <div className="header">
+          <div className="name">Name</div>
+          <div className="status">Status</div>
+          <div className="access">Access</div>
+        </div>
         {fetchedData.map((data) => (
           <UserList data={data} key={data.id} />
         ))}
