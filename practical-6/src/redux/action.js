@@ -44,16 +44,10 @@ export const fetchUsersFailure = (error) => {
   };
 };
 
-export const passDataToCard = ({ data }) => {
+export const passDataToCard = (data ) => {
   return {
     type: PASS_DATA_TO_CARD,
-    payload: {
-      id: data.id,
-      name: data.first_name + " " + data.last_name,
-      email: data.email,
-      status: data.status,
-      avatar: data.avatar,
-    },
+    payload: data,
   };
 };
 

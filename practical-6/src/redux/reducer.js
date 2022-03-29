@@ -38,7 +38,7 @@ const reducer = (state = initialState, action) => {
     case PASS_DATA_TO_CARD:
       return {
         ...state,
-        cardData: action.payload,
+        cardData: action.payload.data,
       };
     case CHANGE_PAGE:
       return {
