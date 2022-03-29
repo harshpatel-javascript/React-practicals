@@ -19,7 +19,7 @@ export const fetchUsersRequest = () => {
 
 export const fetchUsers = (page) => {
   return (dispatch) => {
-    dispatch(fetchUsersRequest);
+    dispatch(fetchUsersRequest());
     axios
       .get(`https://reqres.in/api/users?page=${page}`)
       .then((response) => {
@@ -44,7 +44,7 @@ export const fetchUsersFailure = (error) => {
   };
 };
 
-export const passDataToCard = (data ) => {
+export const passDataToCard = (data) => {
   return {
     type: PASS_DATA_TO_CARD,
     payload: data,

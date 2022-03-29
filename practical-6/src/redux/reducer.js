@@ -28,6 +28,7 @@ const reducer = (state = initialState, action) => {
     case FETCH_USERS_SUCCESS:
       return {
         ...state,
+        loading: false,
         fetchedData: action.payload.data,
       };
     case FETCH_USERS_FAILURE:
