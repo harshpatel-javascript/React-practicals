@@ -21,7 +21,7 @@ function UserList({ data }) {
   const deleteHandler = () => {
     dispatch(deleteUser(data.id));
   };
-  const dropDownMenuHandler = (e) => {
+  const statusDropDownMenuHandler = (e) => {
     const { value } = e.target;
     dispatch(toggleStatus(data.id, value));
   };
@@ -39,7 +39,7 @@ function UserList({ data }) {
         </div>
       </div>
       <div className="user-status">
-        <select name="status" id="status" onChange={dropDownMenuHandler}>
+        <select name="status" id="status" onChange={statusDropDownMenuHandler}>
           <option value="inactive" defaultValue>
             Inactive
           </option>
