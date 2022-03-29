@@ -7,7 +7,7 @@ import "../css/Card.css";
 function Card({ data }) {
   const monthlyClicks = Math.floor(Math.random() * 5000);
   const clicksReviewed = Math.floor(Math.random() * 2000);
-  const progressValue = (monthlyClicks + clicksReviewed) / 10;
+  const progressValue = (Number(monthlyClicks) + Number(clicksReviewed)) / 10;
   const { avatar, first_name, last_name, status, email } = data;
   return (
     <div className="card-container">
@@ -18,7 +18,7 @@ function Card({ data }) {
         <div className="name">{first_name + " " + last_name}</div>
         <div
           className={
-            status === "active" ? "status-icon online" : " status-icon offline"
+            status === "active" ? "status-icon online" : " status-icon"
           }
         ></div>
       </div>

@@ -2,7 +2,6 @@
   padding-top: 16px;
   display: grid;
   grid-template-columns: repeat(4, 220px);
-  align-content: center;
   justify-items: center;
   align-items: center;
 }
@@ -19,6 +18,7 @@ p {
   height: 45px;
   width: 45px;
   border-radius: 50%;
+  object-fit: cover;
 }
 .user-detail {
   display: flex;
@@ -50,7 +50,7 @@ p {
   cursor: pointer;
   color: #b8b8b8;
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
   .user-item {
     padding: 0;
     max-width: 300px;
@@ -76,7 +76,7 @@ p {
     grid-column: 3/4;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
   .user-item {
     padding: 0;
     max-width: 300px;
