@@ -18,7 +18,7 @@ function Card({ data }) {
         <div className="name">{first_name + " " + last_name}</div>
         <div
           className={
-            status === "active" ? "status-msg online" : " status-msg offline"
+            status === "active" ? "status-icon online" : " status-icon offline"
           }
         ></div>
       </div>
