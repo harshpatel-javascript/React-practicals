@@ -16,7 +16,11 @@ function Card({ data }) {
       </div>
       <div className="name-flex">
         <div className="name">{first_name + " " + last_name}</div>
-        <div className="online"></div>
+        <div
+          className={
+            status === "active" ? "status-icon online" : " status-icon offline"
+          }
+        ></div>
       </div>
       <div className="email">{email}</div>
       <div className="plan">Your Plan: Standard</div>

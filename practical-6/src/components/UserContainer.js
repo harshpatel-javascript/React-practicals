@@ -32,14 +32,12 @@ function UserContainer() {
           <UserList data={data} key={data.id} />
         ))}
         <Pagination>
-          <Pagination.Prev />
           <Pagination.Item onClick={() => dispatch(handlePage(1))}>
             1
           </Pagination.Item>
           <Pagination.Item onClick={() => dispatch(handlePage(2))}>
             2
           </Pagination.Item>
-          <Pagination.Last />
         </Pagination>
       </div>
       {/* card data */}

@@ -26,14 +26,19 @@
 .name {
   color: #000000;
 }
-.online {
+.status-icon {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background-color: #4ba75c;
   position: absolute;
   right: 40px;
   top: 3px;
+}
+.offline {
+  background-color: #838383;
+}
+.online {
+  background-color: #4ba75c;
 }
 .email {
   font-weight: 400;
