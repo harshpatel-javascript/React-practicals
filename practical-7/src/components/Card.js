@@ -5,8 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/Card.css";
 
 function Card({ data }) {
-  const monthlyClicks = Math.floor(Math.random() * 5000);
-  const clicksReviewed = Math.floor(Math.random() * 2000);
+  const monthlyClicks = Math.floor(Math.random() * 5000).toLocaleString(
+    "en-us"
+  );
+  const clicksReviewed = Math.floor(Math.random() * 2000).toLocaleString(
+    "en-us"
+  );
   const progressValue = (monthlyClicks + clicksReviewed) / 10;
   const { avatar, first_name, last_name, status, email } = data;
   return (
