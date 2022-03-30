@@ -5,22 +5,21 @@ import ReactPaginate from "react-paginate";
 import "../css/UserContainer.css";
 import Card from "./Card";
 import UserList from "./UserList";
-import { fetchUsers, handlePage } from "../redux/action";
+import { fetchUsers } from "../redux/action";
 
 function UserContainer() {
-  const { loading, cardData, fetchedData, error, activePage, totalPage } =
-    useSelector((state) => state);
+  const { loading, cardData, fetchedData, error, totalPage } = useSelector(
+    (state) => state
+  );
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("active page " + activePage);
-    dispatch(fetchUsers(activePage));
-  }, [dispatch, activePage]);
+    dispatch(fetchUsers());
+  }, [dispatch]);
+  if (loading) <h2>Loading</h2>;
+  if (error) <h2>{error}</h2>;
+
   //getting the detail for card as hovering
-  return loading ? (
-    <h2>Loading</h2>
-  ) : error ? (
-    <h2>{error}</h2>
-  ) : (
+  return (
     <>
       <div className="user-container">
         <div className="header">
@@ -32,13 +31,16 @@ function UserContainer() {
           <UserList data={data} key={data.id} />
         ))}
         <ReactPaginate
-          previousLabel={"pre"}
-          nextLabel={"next"}
+          previousLabel={<>&laquo;</>}
+          nextLabel={<>&raquo;</>}
           pageCount={totalPage}
-          onPageChange={(e) => dispatch(handlePage(e.selected + 1))}
-          containerClassName={"pagination"}
-          subContainerClassName={"pages pagination"}
-          activeClassName={"active"}
+          onPageChange={(e) => dispatch(fetchUsers(e.selected + 1))}
+          containerClassName="pagination"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousLinkClassName="page-link"
+          nextLinkClassName="page-link"
+          activeClassName="active"
         />
       </div>
       {/* card data */}

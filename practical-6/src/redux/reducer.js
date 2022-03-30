@@ -3,7 +3,6 @@ import {
   TOGGLE_STATUS,
   MOUSE_LEAVE,
   DELETE_USER,
-  CHANGE_PAGE,
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE,
@@ -14,7 +13,6 @@ const initialState = {
   cardData: false,
   error: "",
   fetchedData: [],
-  activePage: 0,
   totalPage: 0,
 };
 
@@ -42,11 +40,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         cardData: action.payload.data,
-      };
-    case CHANGE_PAGE:
-      return {
-        ...state,
-        activePage: action.payload.activePage,
       };
     case TOGGLE_STATUS:
       return {

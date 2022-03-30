@@ -8,7 +8,6 @@ import {
   FETCH_USERS_REQUEST,
   FETCH_USERS_SUCCESS,
   FETCH_USERS_FAILURE,
-  CHANGE_PAGE,
 } from "./types";
 
 export const fetchUsersRequest = () => {
@@ -72,15 +71,6 @@ export const deleteUser = (id) => {
     type: DELETE_USER,
     payload: {
       id: id,
-    },
-  };
-};
-
-export const handlePage = (page) => {
-  return {
-    type: CHANGE_PAGE,
-    payload: {
-      activePage: page,
     },
   };
 };
