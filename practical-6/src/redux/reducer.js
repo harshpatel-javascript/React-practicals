@@ -14,7 +14,8 @@ const initialState = {
   cardData: false,
   error: "",
   fetchedData: [],
-  activePage: 1,
+  activePage: 0,
+  totalPage: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -29,6 +30,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
+        totalPage: action.payload.total_pages,
         fetchedData: action.payload.data,
       };
     case FETCH_USERS_FAILURE:

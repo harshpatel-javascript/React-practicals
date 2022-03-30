@@ -15,6 +15,11 @@
   margin-top: 15px;
   margin-left: 320px;
 }
+.pagination li {
+  padding: 10px;
+  border: 1px solid #757575;
+  border-collapse: separate;
+}
 @media screen and (max-width: 992px) {
   .header {
     display: none;

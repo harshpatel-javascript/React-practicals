@@ -76,7 +76,7 @@ export const deleteUser = (id) => {
   };
 };
 
-export const handlePage = (page, data) => {
+export const handlePage = (page) => {
   return {
     type: CHANGE_PAGE,
     payload: {

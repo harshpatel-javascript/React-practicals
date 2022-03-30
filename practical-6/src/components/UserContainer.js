@@ -1,18 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import ReactPaginate from "react-paginate";
 
 import "../css/UserContainer.css";
 import Card from "./Card";
 import UserList from "./UserList";
-import Pagination from "react-bootstrap/Pagination";
 import { fetchUsers, handlePage } from "../redux/action";
 
 function UserContainer() {
-  const { loading, cardData, fetchedData, error, activePage } = useSelector(
-    (state) => state
-  );
+  const { loading, cardData, fetchedData, error, activePage, totalPage } =
+    useSelector((state) => state);
   const dispatch = useDispatch();
   useEffect(() => {
+    console.log("active page " + activePage);
     dispatch(fetchUsers(activePage));
   }, [dispatch, activePage]);
   //getting the detail for card as hovering
@@ -31,14 +31,15 @@ function UserContainer() {
         {fetchedData.map((data) => (
           <UserList data={data} key={data.id} />
         ))}
-        <Pagination>
-          <Pagination.Item onClick={() => dispatch(handlePage(1))}>
-            1
-          </Pagination.Item>
-          <Pagination.Item onClick={() => dispatch(handlePage(2))}>
-            2
-          </Pagination.Item>
-        </Pagination>
+        <ReactPaginate
+          previousLabel={"pre"}
+          nextLabel={"next"}
+          pageCount={totalPage}
+          onPageChange={(e) => dispatch(handlePage(e.selected + 1))}
+          containerClassName={"pagination"}
+          subContainerClassName={"pages pagination"}
+          activeClassName={"active"}
+        />
       </div>
       {/* card data */}
       {cardData && <Card data={cardData} />}
