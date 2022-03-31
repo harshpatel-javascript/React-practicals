@@ -25,6 +25,10 @@ function UserList({ data }) {
     const { value } = e.target;
     dispatch(toggleStatus(data.id, value));
   };
+  const accessDropdownHandler = (e) => {
+    const { value } = e.target;
+    console.log("the access value is changed to " + value);
+  };
   return (
     <div className="user-item">
       <div
@@ -47,7 +51,7 @@ function UserList({ data }) {
         </select>
       </div>
       <div className="user-access">
-        <select name="access" id="access">
+        <select name="access" id="access" onChange={accessDropdownHandler}>
           <option value="Read" defaultValue>
             Read
           </option>
