@@ -10,7 +10,7 @@ function Home() {
   const navigate = useNavigate();
   const logOutClickHandler = () => {
     dispatch(logOut());
-    navigate("/");
+    navigate("/signup");
   };
 
   return (

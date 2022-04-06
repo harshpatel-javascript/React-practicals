@@ -9,12 +9,12 @@ function App() {
   const { authenticated } = useSelector((state) => state);
   const navigate = useNavigate();
   useEffect(() => {
-    authenticated ? navigate("/home") : navigate("/");
+    authenticated ? navigate("/home") : navigate("/signup");
   }, []);
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Signup />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
         <Route path="/home" element={<Home />}></Route>
       </Routes>
     </div>
