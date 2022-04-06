@@ -20,7 +20,7 @@ const initialValues = {
 
 const validate = (values) => {
   let errors = {};
-  if (!values.name) {
+  if (!values.name.trim()) {
     errors.name = "!Required";
   } else if (values.name.length < 15) {
     errors.name = "It is too less than the required length";
@@ -36,13 +36,15 @@ const validate = (values) => {
   if (!values.password.trim()) {
     errors.password = "!Required";
   }
-  if (!values.confirmPassword) {
+  if (!values.confirmPassword.trim()) {
     errors.confirmPassword = "!Required";
   } else if (values.password !== values.confirmPassword) {
     errors.confirmPassword = "This field is not same as Password";
   }
   if (!values.file) {
     errors.file = "!Required";
+  } else if (values.file.size > 2 * 1024 * 1024) {
+    errors.file = " Upload the file with size less than 2 MB.";
   }
   return errors;
 };
@@ -51,7 +53,7 @@ const Signup = () => {
   const dispatch = useDispatch();
   // state for image-preview while uploading
   const [isImageUploaded, setIsImageUploaded] = useState(false);
-  const [isEyeOpen, setIsEyeOpen] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const reference = useRef(null);
   // form submit handler
@@ -72,7 +74,7 @@ const Signup = () => {
   });
   // passowrd eye handler
   const eyeClickHandler = () => {
-    isEyeOpen ? setIsEyeOpen(false) : setIsEyeOpen(true);
+    showPassword ? setShowPassword(false) : setShowPassword(true);
   };
   // file upload handler
   const changeHandler = (e) => {
@@ -193,12 +195,16 @@ const Signup = () => {
               id="password"
               name="password"
               onBlur={formik.handleBlur}
-              type={isEyeOpen ? "password" : "text"}
+              type={showPassword ? "text" : "password"}
               onChange={formik.handleChange}
               value={formik.values.password}
             />
             <div onClick={eyeClickHandler}>
-              {isEyeOpen ? <EyeOff className="eye" /> : <Eye className="eye" />}
+              {showPassword ? (
+                <Eye className="eye" />
+              ) : (
+                <EyeOff className="eye" />
+              )}
             </div>
             {formik.errors.password && formik.touched.password ? (
               <div className="error">{formik.errors.password}</div>

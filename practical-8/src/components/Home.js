@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../css/Home.css";
 import { logOut } from "../redux/action";
+
 function Home() {
   const { userData } = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -14,14 +15,13 @@ function Home() {
   };
 
   return (
-    <>
       <div className="container">
         <nav className="navbar">
           <li>
             <h2>Home Component</h2>
           </li>
           <li>
-            <button className="btn" onClick={logOutClickHandler}>
+            <button className="logout-btn" onClick={logOutClickHandler}>
               Logout
             </button>
           </li>
@@ -39,7 +39,6 @@ function Home() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 

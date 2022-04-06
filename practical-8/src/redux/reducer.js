@@ -1,16 +1,18 @@
 import { AUTHENICATED, LOG_OUT } from "./types";
+
 const initialState = {
   isAuthenticated: false,
   userData: {},
 };
 
 export const reducer = (state = initialState, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case AUTHENICATED:
       return {
         ...state,
         isAuthenticated: true,
-        userData: action.payload,
+        userData: payload,
       };
     case LOG_OUT:
       return {
