@@ -115,9 +115,7 @@ const Signup = () => {
             </div>
           )}
           <div>
-            {isImageUploaded ? (
-              <></>
-            ) : (
+            {!isImageUploaded && (
               <p onClick={() => reference.current.click()} className="text">
                 photo +
               </p>
