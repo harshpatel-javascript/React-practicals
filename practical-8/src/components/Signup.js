@@ -23,7 +23,7 @@ const validate = (values) => {
   if (!values.name.trim()) {
     errors.name = "!Required";
   } else if (values.name.length < 15) {
-    errors.name = "It is too less than the required length";
+    errors.name = "It is  less than 15 character.";
   }
   if (!values.email) {
     errors.email = "!Required";
@@ -39,7 +39,8 @@ const validate = (values) => {
   if (!values.confirmPassword.trim()) {
     errors.confirmPassword = "!Required";
   } else if (values.password !== values.confirmPassword) {
-    errors.confirmPassword = "This field is not same as Password";
+    errors.confirmPassword =
+      "Confirm Password is not same as above Password field.";
   }
   if (!values.file) {
     errors.file = "!Required";
@@ -96,7 +97,7 @@ const Signup = () => {
         >
           <h1 className="header">Sign Up</h1>
           {/* photo */}
-          {isImageUploaded ? (
+          {isImageUploaded && (
             <div className="img-preview-container">
               <img
                 src={formik.values.fileUrl}
@@ -112,8 +113,6 @@ const Signup = () => {
                 }}
               />
             </div>
-          ) : (
-            <></>
           )}
           <div>
             {isImageUploaded ? (
@@ -131,9 +130,9 @@ const Signup = () => {
               name="photo"
               id="photo"
             />
-            {formik.touched.file && formik.errors.file ? (
+            {formik.touched.file && formik.errors.file && (
               <div className="error">{formik.errors.file}</div>
-            ) : null}
+            )}
           </div>
           {/* name  */}
           <div className="label-name">
@@ -148,9 +147,9 @@ const Signup = () => {
               onChange={formik.handleChange}
               value={formik.values.name}
             />
-            {formik.touched.name && formik.errors.name ? (
+            {formik.touched.name && formik.errors.name && (
               <div className="error">{formik.errors.name}</div>
-            ) : null}
+            )}
           </div>
           {/* email */}
           <div className="label-name">
@@ -165,9 +164,9 @@ const Signup = () => {
               onChange={formik.handleChange}
               value={formik.values.email}
             />
-            {formik.touched.email && formik.errors.email ? (
+            {formik.touched.email && formik.errors.email && (
               <div className="error">{formik.errors.email}</div>
-            ) : null}
+            )}
           </div>
           {/* phone */}
           <div className="label-name">
@@ -182,9 +181,9 @@ const Signup = () => {
               onChange={formik.handleChange}
               value={formik.values.phone}
             />
-            {formik.errors.phone && formik.touched.phone ? (
+            {formik.errors.phone && formik.touched.phone && (
               <div className="error">{formik.errors.phone}</div>
-            ) : null}
+            )}
           </div>
           {/* password */}
           <div className="label-name">
@@ -206,9 +205,9 @@ const Signup = () => {
                 <EyeOff className="eye" />
               )}
             </div>
-            {formik.errors.password && formik.touched.password ? (
+            {formik.errors.password && formik.touched.password && (
               <div className="error">{formik.errors.password}</div>
-            ) : null}
+            )}
           </div>
           {/* confirm password */}
           <div className="label-name">
@@ -223,9 +222,10 @@ const Signup = () => {
               onChange={formik.handleChange}
               value={formik.values.confirmPassword}
             />
-            {formik.errors.confirmPassword && formik.touched.confirmPassword ? (
-              <div className="error">{formik.errors.confirmPassword}</div>
-            ) : null}
+            {formik.errors.confirmPassword &&
+              formik.touched.confirmPassword && (
+                <div className="error">{formik.errors.confirmPassword}</div>
+              )}
           </div>
           {/* submit and reset button */}
           <div className="label1">
