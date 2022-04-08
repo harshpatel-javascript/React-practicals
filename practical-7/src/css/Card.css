@@ -1,0 +1,94 @@
+.card-container {
+  width: 270px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  position: absolute;
+  top: 80px;
+  right: 160px;
+  background-color: #fff;
+  border-radius: 50px;
+  box-shadow: 22px 20px 32px 5px #b8b8b8;
+}
+.img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.name-flex {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.plan,
+.name {
+  color: #000000;
+}
+.status-icon {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  position: absolute;
+  right: 40px;
+  background-color: #838383;
+  top: 3px;
+}
+.online {
+  background-color: #4ba75c;
+}
+.email {
+  font-weight: 400;
+  color: #878787;
+}
+.btn {
+  border: none;
+  padding: 8px 32px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: capitalize;
+  background-color: #feb23f;
+}
+.progress-container p {
+  margin-left: 16px;
+  text-align: left;
+}
+.progress {
+  height: 5px;
+  width: 180px;
+  margin-left: 16px;
+  border-radius: 15px;
+  background-color: #fddca9;
+}
+.progress-bar {
+  background: #feb23f;
+}
+.analysis {
+  display: flex;
+  justify-content: center;
+}
+.click-reviews,
+.monthly-clicked {
+  font-size: 24px;
+}
+.click-reviews {
+  padding-right: 16px;
+  border-right: 1px solid #cccccc;
+}
+.monthly-clicked {
+  padding-left: 16px;
+}
+.text {
+  font-size: 11px;
+  font-weight: 400;
+  color: #7a7986;
+}
+@media screen and (max-width: 992px) {
+  .card-container {
+    right: 80px;
+  }
+}
