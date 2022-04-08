@@ -26,11 +26,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build:staging": "env-cmd -f .env.staging npm run build",
-    "build-prod" :"",
+    "build:prod": "env-cmd -f .env npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-    
   },
   "eslintConfig": {
     "extends": [
