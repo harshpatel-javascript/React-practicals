@@ -7,11 +7,12 @@ import Signup from "./components/Signup";
 import "./App.css";
 
 function App() {
-  const { authenticated } = useSelector((state) => state);
+  const { isAuthenticated } = useSelector((state) => state);
   const navigate = useNavigate();
   useEffect(() => {
-    authenticated ? navigate("/home") : navigate("/signup");
-  }, []);
+    console.log("header");
+    isAuthenticated ? navigate("/home") : navigate("/signup");
+  }, [isAuthenticated, navigate]);
   return (
     <div className="app">
       <Routes>
