@@ -35,8 +35,8 @@ const Home = () => {
         <div className="data-container">
           Hello <span>{name}</span>,<br /> you are registered with the email-
           <span>{email}</span> and <br />
-          phone number -<span>{phone}</span> ” Along with a logout button on the
-          top right.
+          phone number -<span>{phone}</span> ” and you can logout from top right
+          button.
         </div>
       </div>
     </div>

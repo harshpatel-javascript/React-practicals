@@ -1,23 +1,29 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Home from "./components/Home";
-import Signup from "./components/Signup";
+import SignUp from "./components/SignUp";
 import "./App.css";
+import PrivateRoute from "./components/PrivateRoute";
+import PublicRoute from "./components/PublicRoute";
 
 function App() {
   const { isAuthenticated } = useSelector((state) => state);
-  const navigate = useNavigate();
-  useEffect(() => {
-    console.log("header");
-    isAuthenticated ? navigate("/home") : navigate("/signup");
-  }, [isAuthenticated, navigate]);
   return (
     <div className="app">
       <Routes>
-        <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route
+          path="/signup"
+          element={
+            <PublicRoute isAuthenticated={isAuthenticated} component={SignUp} />
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated} component={Home} />
+          }
+        />
       </Routes>
     </div>
   );
