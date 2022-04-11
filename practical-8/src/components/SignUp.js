@@ -36,6 +36,7 @@ function SignUp() {
       >
         {({ values, setFieldValue }) => (
           <Form className="form-container">
+            <h1 className="header">Sign Up</h1>
             <InputPhoto
               name="file"
               setFieldValue={setFieldValue}
