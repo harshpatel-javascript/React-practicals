@@ -55,14 +55,6 @@ input {
   margin-top: 16px;
   border-radius: 2px;
 }
-.eye {
-  color: grey;
-  height: 15px;
-  width: 15px;
-  position: absolute;
-  top: 40px;
-  right: 0;
-}
 .error {
   color: red;
   font-size: 12px;
@@ -90,7 +82,6 @@ img {
   height: 500px;
   width: 500px;
 }
-
 @media screen and (max-width: 768px) {
   .main-container {
     height: 800px;
